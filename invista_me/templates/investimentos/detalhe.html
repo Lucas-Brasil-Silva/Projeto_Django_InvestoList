@@ -1,0 +1,26 @@
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+<h1 style="text-align: center;">Detalhe do Investimento</h1>
+<dir class="container">
+    <table class="table table-hover table-striped table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Investimento</th>
+            <th>Valor</th>
+            <th>Pago</th>
+            <th>Data de Cadastro</th>
+        </tr>
+        <tr>
+            <td>{{dados.id}}</td>
+            <td>{{dados.investimento}}</td>
+            <td>R$ {{dados.valor}}</td>
+            {% if dados.pago %}
+            <td>Sim</td>
+            {% else %}
+            <td>Não</td>
+            {% endif %}
+            <td>{{dados.data}}</td>
+        </tr>
+    </table>
+</dir>
+{% endblock %}
